@@ -2,7 +2,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Flask: Main.py (debug)",
+            "name": "Flask: Main.py (default .env)",
             "type": "debugpy",
             "request": "launch",
             "program": "${workspaceFolder}/Main.py",
@@ -11,6 +11,32 @@
             "jinja": true,
             "env": {
                 "FLASK_DEBUG": "False"
+            }
+        },
+        {
+            "name": "Flask: Main.py (.env.debug)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/Main.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "jinja": true,
+            "env": {
+                "FLASK_DEBUG": "False",
+                "APP_ENV": "debug"
+            }
+        },
+        {
+            "name": "Flask: Main.py (.env.production)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/Main.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "jinja": true,
+            "env": {
+                "FLASK_DEBUG": "False",
+                "APP_ENV": "production"
             }
         },
         {
