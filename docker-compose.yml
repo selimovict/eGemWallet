@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  gem_wallet_api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: gem_wallet_api
+    ports:
+      - "9090:9090"
+    restart: always
+    env_file:
+      - .env
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import urllib.request; urllib.request.urlopen('http://localhost:9090/health').read()\" || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+# Pokretanje:
+#   docker compose up --build -d
+#
+# Logovi:
+#   docker compose logs -f gem_wallet_api
+#
+# Stanje:
+#   docker compose ps
+#   docker stats gem_wallet_api
+#
+# Zaustavljanje:
+#   docker compose down
