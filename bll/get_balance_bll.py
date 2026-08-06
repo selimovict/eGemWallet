@@ -2,6 +2,7 @@ from dal.database import Database
 from models.get_balance_service_model import GetBalanceRequest, GetBalanceResponse
 
 
+
 class GetBalanceBLL:
 
     @staticmethod
