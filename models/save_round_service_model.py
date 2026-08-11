@@ -7,5 +7,6 @@ class SaveRoundResponse(BaseServiceModel):
     def __init__(self):
         self.RoundID = None
         self.ExternalRoundIdentifier = None
+        self.BetProcessed = None
         self.Success = None
         self.Message = None
