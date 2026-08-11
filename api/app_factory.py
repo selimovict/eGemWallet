@@ -59,13 +59,17 @@ def create_app():
 def register_blueprints(app):
     from api.endpoints.register_user_endpoints import register_user_bp
     from api.endpoints.link_identity_endpoints import link_identity_bp
+    from api.endpoints.user_identity_endpoints import user_identity_bp
     from api.endpoints.get_balance_endpoints import get_balance_bp
     from api.endpoints.put_amount_endpoints import put_amount_bp
+    from api.endpoints.save_round_endpoints import save_round_bp
 
     app.register_blueprint(register_user_bp, url_prefix="/api/user")
     app.register_blueprint(link_identity_bp, url_prefix="/api/user")
+    app.register_blueprint(user_identity_bp, url_prefix="/api/user")
     app.register_blueprint(get_balance_bp, url_prefix="/api/wallet")
     app.register_blueprint(put_amount_bp, url_prefix="/api/wallet")
+    app.register_blueprint(save_round_bp, url_prefix="/api/game")
 
 
 def register_error_handlers(app):
