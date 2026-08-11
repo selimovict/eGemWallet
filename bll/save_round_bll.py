@@ -86,7 +86,8 @@ class SaveRoundBLL:
                 DetailsJSON,
                 ApplicationID,
                 CurrencyCode,
-                BetProcessed
+                BetProcessed,
+                theme_id
             )
             OUTPUT INSERTED.RoundID, INSERTED.ExternalRoundIdentifier
             VALUES (
@@ -120,7 +121,8 @@ class SaveRoundBLL:
                 %(DetailsJSON)s,
                 %(ApplicationID)s,
                 %(CurrencyCode)s,
-                0
+                0,
+                %(theme_id)s
             )
         """
 
@@ -151,6 +153,7 @@ class SaveRoundBLL:
             "DetailsJSON":     _json_or_null(body.get("details")),
             "ApplicationID":   application_id,
             "CurrencyCode":    currency_code,
+            "theme_id":        body.get("theme_id"),
         }
 
         if has_external_id:
