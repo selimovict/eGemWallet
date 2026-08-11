@@ -30,6 +30,9 @@ def save_round():
             - balance
             - currency
           properties:
+            external_round_identifier:
+              type: string
+              example: "round-abc-12345"
             success:
               type: boolean
               example: true
