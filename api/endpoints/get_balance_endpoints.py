@@ -5,6 +5,7 @@ from bll.get_balance_bll import GetBalanceBLL
 from models.get_balance_service_model import GetBalanceRequest
 
 
+
 get_balance_bp = Blueprint("get_balance_bp", __name__)
 
 
